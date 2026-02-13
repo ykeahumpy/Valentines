@@ -14,10 +14,23 @@ sections.forEach(section => observer.observe(section));
 // NO button runs away 😆
 const noBtn = document.querySelector(".no");
 
-noBtn.addEventListener("mouseenter", () => {
-    const x = Math.random() * 300 - 150;
-    const y = Math.random() * 200 - 100;
+function moveNoButton() {
+    const maxX = window.innerWidth < 500 ? 120 : 150;
+    const maxY = window.innerWidth < 500 ? 80 : 100;
+
+    const x = Math.random() * maxX * 2 - maxX;
+    const y = Math.random() * maxY * 2 - maxY;
+
     noBtn.style.transform = `translate(${x}px, ${y}px)`;
+}
+
+/* Desktop hover */
+noBtn.addEventListener("mouseenter", moveNoButton);
+
+/* Mobile tap */
+noBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    moveNoButton();
 });
 
 // YES popup 💘
