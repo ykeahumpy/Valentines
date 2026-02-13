@@ -1,0 +1,301 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-size: 16px;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(
+    circle at top,
+    #ff9a9e 30%,
+    #ff5f7e 60%,
+    #b3123b 100%
+);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+section {
+    min-height: 100vh;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 8vw, 4.5rem);
+    margin: 10px 0;
+}
+
+.hero p {
+    max-width: 90%;
+    font-size: 1rem;
+}
+
+.hero h4 {
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 24px;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.card h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+}
+
+.heart {
+    width: 90px;
+    height: 90px;
+    background: #ff1e56;
+    position: relative;
+    transform: rotate(-45deg);
+    animation: pulse 1.5s infinite;
+    margin: 30px 0;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 90px;
+    height: 90px;
+    background: #ff1e56;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before {
+    top: -45px;
+    left: 0;
+}
+
+.heart::after {
+    left: 45px;
+    top: 0;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1) rotate(-45deg); }
+    50% { transform: scale(1.2) rotate(-45deg); }
+    100% { transform: scale(1) rotate(-45deg); }
+}
+
+.buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.yes {
+    background: #ff1e56;
+    color: white;
+}
+
+.yes:hover {
+    background: #ff4d79;
+}
+
+.no {
+    background: white;
+    color: #3b0000;
+    position: relative;
+}
+
+.popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s ease;
+}
+
+.popup.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.popup-content {
+    background: white;
+    color: #3b0000;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 90%;
+}
+
+@keyframes pop {
+    to { transform: scale(1); }
+}
+
+.popup-content h1 {
+    margin-bottom: 15px;
+}
+
+.popup-content button {
+    margin-top: 20px;
+    background: #ff1e56;
+    color: white;
+}
+
+.unlock {
+    margin-bottom: 25px;
+}
+
+.unlock-text {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+input[type="date"] {
+    width: 100%;
+    max-width: 260px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 12px;
+    border: none;
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.unlock button {
+    max-width: 260px;
+    width: 100%;
+    display: block;
+    margin: 10px auto 0;
+    padding: 10px 22px;
+    border-radius: 20px;
+    border: none;
+    background: #ff1e56;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.unlock button:hover {
+    background: #ff4d79;
+}
+
+.secret-message {
+    margin-top: 20px;
+    transition: filter 1s ease, opacity 1s ease;
+    text-align: left;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.secret-message strong {
+    display: block;
+    text-align: left;
+    margin-bottom: 10px;
+    font-family: 'Poppins', serif;
+    font-size: 1rem;
+}
+
+#two{
+    display: block;
+    text-align: right;
+    font-family: 'Poppins', serif;
+    font-size: 1rem;
+}
+
+.blurred {
+    filter: blur(6px);
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.blurred.revealed {
+    filter: blur(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.error {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #ffd1dc;
+}
+
+@media (max-width: 480px) {
+
+    section {
+        padding: 40px 16px;
+    }
+
+    .hero h2 {
+        font-size: 1rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .secret-message {
+        font-size: 0.9rem;
+    }
+
+    #two {
+        font-size: 0.9rem;
+    }
+
+    .heart {
+        width: 70px;
+        height: 70px;
+    }
+
+    .heart::before,
+    .heart::after {
+        width: 70px;
+        height: 70px;
+    }
+
+    .heart::before {
+        top: -35px;
+    }
+
+    .heart::after {
+        left: 35px;
+    }
+}

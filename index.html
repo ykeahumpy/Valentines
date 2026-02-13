@@ -1,0 +1,89 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Love, Value, Care</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" href="image/heart.png">
+    </head>
+    <body>
+
+        <!-- HERO -->
+        <section class="hero hidden">
+            <h2>A message, just for you</h2>
+            <h1>Erika Mae</h1>
+            <p>This page was made with love… scroll down ❤️</p>
+        </section>
+
+        <!-- LETTER -->
+        <section class="letter hidden">
+            <div class="card">
+                <div class="unlock">
+                <p class="unlock-text">
+                    Before you read this… what’s our anniversary date? 💞
+                </p>
+                <input type="date" 
+                id="anniversaryInput" placeholder="**-**-**">
+                <button id="unlockBtn">Unlock my message 💌</button>
+                <p class="error" id="errorMsg"></p>
+    </div>
+
+                <p class="secret-message blurred" id="secretMessage">
+                    <strong>Lovee,</strong>
+                    Happy Valentine's Day my Lovee. It's been 2 years already since we met,
+                    I am always grateful that you're the one who came into my life — that
+                    you are my partner in everything. It's literally "kung hindi ikaw 'wag na",
+                    I want to spend the rest of my life with you — build a life with you and a family.
+                    Even we face so many ups and downs in life/relationship, I will always choose you —
+                    choose us. 
+                    <br>
+                    <br>
+                    We don't know what the future holds, but I wish the best for the both of us love.
+                    May our paths lead us to success — to our goals and dreams, not just for our 
+                    relationship but also for our families too. Good luck on our OJT love, may this
+                    opportunity gave us a fresh start for our future.
+                    <br>
+                    <br>
+                    Lastly love, I really want to apologize about our Valentines this year, I didn't want
+                    it to be like this, that it wasn't like before. I will make it up with you love, like 
+                    I always do.
+                    <br>
+                    <br>
+                    <strong id="two">
+                    I love you so so muchh, love
+                    <br>
+                    -Ian
+                    </strong>
+                </p>
+            </div>
+        </section>
+
+        <section class="valentine hidden">
+            <h1>Will you be my Valentine, love?</h1>
+            <br>
+            <br>
+            <div class="heart"></div>
+            <br>
+            <br>
+            <div class="buttons">
+                <button class="yes">YES</button>
+                <button class="no">NO</button>
+            </div>
+        </section>
+
+        <!-- POPUP -->
+        <div class="popup" id="popup">
+            <div class="popup-content">
+                <h1>YEHEYYYYY!!❤️</h1>
+                <p>
+                    I love you so much love koo!!! 😙😙
+                </p>
+                <button onclick="closePopup()">Close</button>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+    </html>
